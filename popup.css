@@ -1,0 +1,209 @@
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --accent: #2563eb;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --text-main: #f1f5f9;
+    --text-mute: #94a3b8;
+}
+
+body {
+    width: 360px;
+    height: 520px;
+    margin: 0;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header & Tabs */
+header {
+    background: var(--bg-card);
+    padding: 10px 15px;
+    border-bottom: 1px solid #334155;
+}
+
+.logo-area h1 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge-pro {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-mute);
+    cursor: pointer;
+    padding: 5px 0;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.tab-btn.active {
+    color: var(--text-main);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+}
+
+/* Views */
+.view {
+    display: none;
+    padding: 20px;
+}
+
+.view.active {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Overview Status */
+.status-card {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #334155;
+    stroke-width: 2.5;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.5s ease;
+}
+
+.percentage {
+    fill: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 8px;
+    text-anchor: middle;
+}
+
+/* Stats Grid */
+.quick-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.stat-box {
+    background: var(--bg-card);
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #334155;
+}
+
+.stat-val {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.stat-lbl {
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+}
+
+/* Details Console */
+.details-console {
+    background: #000;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 12px;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #334155;
+}
+
+.console-line {
+    margin-bottom: 6px;
+    line-height: 1.4;
+    border-bottom: 1px solid #111;
+    padding-bottom: 4px;
+}
+
+.console-line.danger {
+    color: var(--danger);
+}
+
+.console-line.warn {
+    color: #f59e0b;
+}
+
+.text-muted {
+    color: var(--text-mute);
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    background: var(--bg-card);
+    border-top: 1px solid #334155;
+}
+
+button#scan-btn {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
